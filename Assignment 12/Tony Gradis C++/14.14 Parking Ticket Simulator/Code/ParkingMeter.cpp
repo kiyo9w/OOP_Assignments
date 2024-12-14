@@ -1,5 +1,7 @@
-//
-// Created by Ngô Trung on 14/12/24.
-//
-
 #include "ParkingMeter.h"
+
+ParkingMeter::ParkingMeter(int minutesPurchased) : purchasedMinutes(minutesPurchased) {}
+
+int ParkingMeter::getPurchasedMinutes() const {
+    return purchasedMinutes;
+}

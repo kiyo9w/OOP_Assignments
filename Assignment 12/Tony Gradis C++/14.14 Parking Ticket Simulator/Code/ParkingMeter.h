@@ -1,16 +1,13 @@
-//
-// Created by Ngô Trung on 14/12/24.
-//
-
 #ifndef PARKINGMETER_H
 #define PARKINGMETER_H
 
-
-
 class ParkingMeter {
+private:
+    int purchasedMinutes;
 
+public:
+    ParkingMeter(int minutesPurchased);
+    int getPurchasedMinutes() const;
 };
 
-
-
-#endif //PARKINGMETER_H
+#endif
