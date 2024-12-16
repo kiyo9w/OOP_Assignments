@@ -1,8 +1,10 @@
 ﻿#include "RoomCarpet.h"
+#include <iostream>
+#include <iomanip>
 
-RoomCarpet::RoomCarpet(RoomDimension r, double price) : room(r), pricePerSquareFoot(price) {}
+RoomCarpet::RoomCarpet(const RoomDimension& rd, double cost)
+    : room(rd), costPerSquareFoot(cost) {}
 
-// Tính tổng chi phí trải thảm
-double RoomCarpet::getTotalCost() {
-    return room.getArea().toDouble() * pricePerSquareFoot;
+double RoomCarpet::getTotalCost() const {
+    return room.getArea() * costPerSquareFoot;
 }

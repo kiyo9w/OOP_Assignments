@@ -6,11 +6,10 @@
 class RoomCarpet {
 private:
     RoomDimension room;
-    double pricePerSquareFoot;
-
+    double costPerSquareFoot;
 public:
-    RoomCarpet(RoomDimension r, double price);
-    double getTotalCost(); // Tính tổng chi phí trải thảm
+    RoomCarpet(const RoomDimension& rd, double cost);
+    double getTotalCost() const;
 };
 
-#endif // ROOMCARPET_H
+#endif

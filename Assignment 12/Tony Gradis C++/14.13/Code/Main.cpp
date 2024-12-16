@@ -1,31 +1,41 @@
 ﻿#include <iostream>
+#include <iomanip>
 #include "FeetInches.h"
 #include "RoomDimension.h"
 #include "RoomCarpet.h"
 
-using namespace std;
-
 int main() {
-    int lengthFeet, lengthInches, widthFeet, widthInches;
-    double price;
+    int lengthFeet, lengthInches;
+    int widthFeet, widthInches;
+    double pricePerSqFt;
 
-    // Nhập dữ liệu từ người dùng
-    cout << "Enter the length of the room (feet inches): ";
-    cin >> lengthFeet >> lengthInches;
-    cout << "Enter the width of the room (feet inches): ";
-    cin >> widthFeet >> widthInches;
-    cout << "Enter the price per square foot: $";
-    cin >> price;
+    std::cout << "Enter the length of the room.\n";
+    std::cout << "Feet: ";
+    std::cin >> lengthFeet;
+    std::cout << "Inches: ";
+    std::cin >> lengthInches;
 
-    // Tạo các đối tượng
+    std::cout << "\nEnter the width of the room.\n";
+    std::cout << "Feet: ";
+    std::cin >> widthFeet;
+    std::cout << "Inches: ";
+    std::cin >> widthInches;
+
+    std::cout << "\nEnter the price of the carpet per square foot: $";
+    std::cin >> pricePerSqFt;
+
     FeetInches length(lengthFeet, lengthInches);
     FeetInches width(widthFeet, widthInches);
-    RoomDimension roomDim(length, width);
-    RoomCarpet carpet(roomDim, price);
+    RoomDimension room(length, width);
+    RoomCarpet carpet(room, pricePerSqFt);
 
-    // Hiển thị kết quả
-    roomDim.display();
-    cout << "Total cost of carpet: $" << carpet.getTotalCost() << endl;
+    double area = room.getArea();
+    double totalCost = carpet.getTotalCost();
+
+    std::cout << "\nRoom Dimensions:\n";
+    room.display();
+    std::cout << "\nArea: " << std::fixed << std::setprecision(2) << area << " square feet";
+    std::cout << "\nTotal cost of " << area << " area: $" << totalCost << "\n";
 
     return 0;
 }

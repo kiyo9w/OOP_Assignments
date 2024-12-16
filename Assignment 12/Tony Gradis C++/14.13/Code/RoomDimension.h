@@ -7,11 +7,12 @@ class RoomDimension {
 private:
     FeetInches length;
     FeetInches width;
-
 public:
-    RoomDimension(FeetInches l, FeetInches w);
-    FeetInches getArea(); // Tính diện tích phòng
-    void display();       // Hiển thị kích thước phòng
+    RoomDimension(const FeetInches& len, const FeetInches& wid);
+    FeetInches getLength() const;
+    FeetInches getWidth() const;
+    double getArea() const;
+    void display() const;
 };
 
-#endif // ROOMDIMENSION_H
+#endif

@@ -5,13 +5,13 @@ class FeetInches {
 private:
     int feet;
     int inches;
-    void simplify(); // Hàm nội bộ để chuyển đổi inches > 12
-
+    void normalize();
 public:
-    FeetInches(int f = 0, int i = 0);
-    FeetInches multiply(const FeetInches& other);
-    double toDouble() const; // Chuyển thành số foot dạng thập phân
+    FeetInches(int ft = 0, int in = 0);
+    int getFeet() const;
+    int getInches() const;
+    double multiply(const FeetInches& other) const;
     void display() const;
 };
 
-#endif // FEETINCHES_H
+#endif

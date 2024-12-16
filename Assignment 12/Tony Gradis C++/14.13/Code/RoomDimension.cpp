@@ -1,19 +1,24 @@
 ﻿#include "RoomDimension.h"
 #include <iostream>
-using namespace std;
 
-RoomDimension::RoomDimension(FeetInches l, FeetInches w) : length(l), width(w) {}
+RoomDimension::RoomDimension(const FeetInches& len, const FeetInches& wid)
+    : length(len), width(wid) {}
 
-// Trả về diện tích phòng dưới dạng FeetInches
-FeetInches RoomDimension::getArea() {
+FeetInches RoomDimension::getLength() const {
+    return length;
+}
+
+FeetInches RoomDimension::getWidth() const {
+    return width;
+}
+
+double RoomDimension::getArea() const {
     return length.multiply(width);
 }
 
-// Hiển thị kích thước phòng
-void RoomDimension::display() {
-    cout << "Room Dimensions: ";
+void RoomDimension::display() const {
+    std::cout << "Length: ";
     length.display();
-    cout << " x ";
+    std::cout << ", Width: ";
     width.display();
-    cout << endl;
 }
